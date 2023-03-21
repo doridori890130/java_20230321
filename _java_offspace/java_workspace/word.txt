@@ -1,0 +1,6 @@
+apple : 사과
+banana : 바나나
+grape : 포도
+hellow : 안녕
+hi : 안녕
+orange : 오렌지

@@ -1,0 +1,31 @@
+package day16;
+
+import java.util.ArrayList;
+
+public class StreamEx03 {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Student> stList = new ArrayList<>();
+
+		stList.add(new Student("홍길동", 75));
+		stList.add(new Student("홍길순", 100));
+		stList.add(new Student("김철순", 30));
+		stList.add(new Student("박광명", 50));
+		stList.add(new Student("조현호", 60));
+		
+		System.out.println("====시험 성적표====");
+		stList.stream().forEach(b->{System.out.println(b.getEname()+":"+b.getEscore());});
+		int totalsum = stList.stream().mapToInt(b->b.getEscore()).sum();
+		System.out.println("================");
+		System.out.println("합 계:"+totalsum);
+		System.out.println("================");
+		long cnt = stList.stream().count();
+		System.out.println("총인원 :"+cnt);
+		
+		double avg = stList.stream().mapToDouble(b->b.getEscore()).average().orElse(1);
+		System.out.println("평균 : "+avg);
+
+	}
+
+}

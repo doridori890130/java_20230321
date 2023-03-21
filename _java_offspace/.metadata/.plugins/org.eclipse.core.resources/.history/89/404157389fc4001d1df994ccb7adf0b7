@@ -1,0 +1,32 @@
+package day16;
+
+import java.util.ArrayList;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		
+		
+		
+		ArrayList<Customer> caList = new ArrayList<>();
+		
+		
+		caList.add(new Customer("이순신", 40));
+		caList.add(new Customer("신사임당", 35));
+		caList.add(new Customer("이아들", 10));
+		
+		
+		caList.stream().forEach(b->{System.out.println("이름 :"+b.getNameCustomer()+" 나이 :"
+		
+		+b.getAgeCustomer()+" 비용:"+b.getCostCustomer());}
+				);
+		
+		int sum = caList.stream().mapToInt(b-> b.getCostCustomer()).sum();
+		System.out.println("총 여행비용: "+sum+"만원");
+		
+		//20세 이상 성인만 이름을 정렬하여 출력
+		caList.stream().filter(b->b.getAgeCustomer()>=20).forEach(b->b.getNameCustomer());
+	
+	}
+
+}

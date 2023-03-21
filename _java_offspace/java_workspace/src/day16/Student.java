@@ -1,0 +1,39 @@
+package day16;
+
+public class Student {
+
+	private int Escore;
+	private String Ename;
+	
+	public Student(String name , int score) {
+		this.Ename = name;
+		this.Escore = score;
+	}
+	
+	
+
+	public int getEscore() {
+		return Escore;
+	}
+
+	public void setEscore(int escore) {
+		Escore = escore;
+	}
+
+	public String getEname() {
+		return Ename;
+	}
+
+	public void setEname(String ename) {
+		Ename = ename;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Student [Escore=" + Escore + ", Ename=" + Ename + "]";
+	}
+	
+	
+}

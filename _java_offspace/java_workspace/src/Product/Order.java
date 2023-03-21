@@ -1,0 +1,32 @@
+package Product;
+
+public class Order {
+	
+	Product op = new Product();
+	int ordercount = 0;
+	
+	
+	public Order(Product p, int count) {
+		this.ordercount = count;
+		this.op=p;
+		
+		
+	}
+
+	public Product getOp() {
+		return op;
+	}
+
+	public void setOp(Product op) {
+		this.op = op;
+	}
+
+	public int getCount() {
+		return ordercount;
+	}
+
+	public void setCount(int count) {
+		this.ordercount = count;
+	}
+
+}

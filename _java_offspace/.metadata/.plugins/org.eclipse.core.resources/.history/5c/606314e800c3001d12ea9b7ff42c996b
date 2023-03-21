@@ -1,0 +1,94 @@
+package Product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+
+	Scanner scan = new Scanner(System.in);
+	private ArrayList<Product> ProductList = new ArrayList<>();
+	private ArrayList<Order> OrderList = new ArrayList<>();
+	private int index = -1;
+	private int totalPrice = 0;
+	
+	//기본 메뉴 만들기
+	public void addBasicProduct() {
+		
+		ProductList.add(new Product("치즈버거", 5000));
+		ProductList.add(new Product("빅맥", 6000));
+		ProductList.add(new Product("와퍼", 8000));
+		ProductList.add(new Product("상하이스파이시치킨버거", 4000));
+		ProductList.add(new Product("싸이버거", 3000));
+		ProductList.add(new Product("콜라", 2000));
+		
+	}
+	
+	//메뉴추가하기
+	public void addProduct() {
+		System.out.println("추가할 제품메뉴를 입력해주세요>");
+		String addMenu = scan.next();
+		System.out.println("제품의 가격을 입력해주세요>");
+		int addMenuPrice = scan.nextInt();
+		
+		Product addProd = new Product(addMenu, addMenuPrice);
+		for(Product tmp : ProductList) {
+			if(tmp.equals(addProd)) {
+				System.out.println("이미 있는 메뉴입니다.");
+				index = 0;
+				break;
+			}
+		}
+		if(index==-1) {
+			ProductList.add(addProd);
+			System.out.println(addProd.getProductName()+"("+addProd.getProductPrice()+"원) 추가되었습니다.");
+		}
+		
+		
+	}
+	
+	//메뉴리스트출력
+	public void printProduct() {
+		int Num= 1;
+		for(Product tmp : ProductList) {
+			System.out.println(Num+". "+tmp.getProductName()+"("+tmp.getProductPrice()+")");
+			Num++;
+		}
+		
+	}
+	
+	//제품주문
+	public void orderPick() {
+		System.out.println("주문하실 제품>");
+		String orderMenu = scan.next();
+		System.out.println("수량>");
+		int orderCount = scan.nextInt();
+		
+		for(Product tmp : ProductList) {
+			if(tmp.getProductName().equals(orderMenu)){
+				Order op = new Order(tmp, orderCount);
+				OrderList.add(op);
+				
+				
+				
+				break;
+			}
+		}
+		
+		
+	}
+	//주문내역 출력
+	public void printOrderPick() {
+		int Num = 1;
+		
+		for(Order tmp : OrderList) {
+			int orderPrice = 0;
+			orderPrice = tmp.getOp().getProductPrice()*tmp.getCount();
+			System.out.println(Num+". "+tmp.getOp().getProductName()+"("+tmp.getOp().getProductPrice()
+					+"원)  x"+tmp.getCount()+"="+orderPrice);
+			totalPrice = totalPrice + orderPrice;
+			Num++;
+		}
+		System.out.println("총금액 : "+totalPrice);
+	}
+	
+}

@@ -1,0 +1,47 @@
+package day16;
+
+public class Customer {
+	
+	private String nameCustomer;
+	private int ageCustomer;
+	private int costCustomer;
+
+	public Customer(String name , int age) {
+		this.ageCustomer = age;
+		this.nameCustomer = name;
+	}
+
+	public String getNameCustomer() {
+		return nameCustomer;
+	}
+
+	public void setNameCustomer(String nameCustomer) {
+		this.nameCustomer = nameCustomer;
+	}
+
+	public int getAgeCustomer() {
+		return ageCustomer;
+	}
+
+	public void setAgeCustomer(int ageCustomer) {
+		this.ageCustomer = ageCustomer;
+	}
+	
+	public int clacCost() {
+		if(ageCustomer > 15) {
+			costCustomer = 100;
+		}
+		else if(ageCustomer <15) {
+			costCustomer = 50;
+		}
+		return costCustomer;
+	}
+
+	public int getCostCustomer() {
+		return costCustomer;
+	}
+
+	public void setCostCustomer(int costCustomer) {
+		this.costCustomer = costCustomer;
+	}
+}

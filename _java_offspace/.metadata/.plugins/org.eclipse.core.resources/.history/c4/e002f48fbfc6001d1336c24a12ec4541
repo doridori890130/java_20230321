@@ -1,0 +1,22 @@
+package day17;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterEX01 {
+
+	public static void main(String[] args) throws IOException {
+		/*	문자 기반 스트림
+		 * */
+		FileWriter fw = new FileWriter("test.txt");
+		
+		for(int i = 1 ; i<=10 ; i++) {
+			String data = i+"test \r\n ";  // \r\n
+			fw.write(data);
+		}
+		
+		fw.close();
+		
+	}
+
+}
