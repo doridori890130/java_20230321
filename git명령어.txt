@@ -1,0 +1,11 @@
+$git init 			-git 폴더로 생성
+$git config-- global user.name "이름"
+$git config-- global user.eamil "email"
+$git --list
+----------------한번 해놓으면 다음부터 할일 없음
+$git add. 		-현재 폴더에 있는 파일을 전부 올리기위한 작업
+$git status 	-현재 상태확인
+$git commit -m "first commit" -log 이름설정
+$git remote add origin https://github.com/doridori890130/java_20230321.git		-github repogitory에 연결
+$git remote -v			-리모트 연결확인
+$git push -u oringin master		-연결한 주소로 올리기
